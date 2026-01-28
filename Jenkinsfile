@@ -25,10 +25,9 @@ pipeline {
           sh '''
             ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
               -Dsonar.projectKey=sonar-demo \
-              -Dsonar.projectName="Sonar Scanning Examples" \
               -Dsonar.sources=. \
-              -Dsonar.host.url=$SONAR_HOST_URL \
-              -Dsonar.login=$SONAR_AUTH_TOKEN
+              -Dsonar.host.url=http://localhost:9000 \
+              -Dsonar.inclusions=**/*.tf,**/*.hcl
           '''
         }
       }
